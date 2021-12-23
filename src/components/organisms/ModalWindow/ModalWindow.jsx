@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
+import { CloseCircleOutlined } from '@ant-design/icons'
+import { Button } from 'antd'
 import getChildrenForModalWindow from 'helpers/getChildrenForModalWindow'
-import { Button } from 'components/atoms'
 import { Wrapper } from './ModalWindow.styles'
 
 const ModalWindow = () => {
@@ -15,10 +16,15 @@ const ModalWindow = () => {
   }, [])
 
   const handleClose = useCallback(e => {
-    if (e.target.id === 'modalLayout' || e.target.id === 'closeModalBtn') {
+    if (e.target.id === 'modalLayout') {
       setIsModalOpen(false)
-      setChildrenType('')
+      setTimeout(() => setChildrenType(''), 300)
     }
+  }, [])
+
+  const handleButtonClose = useCallback(() => {
+    setIsModalOpen(false)
+    setTimeout(() => setChildrenType(''), 300)
   }, [])
 
   useEffect(() => {
@@ -37,7 +43,7 @@ const ModalWindow = () => {
       <Wrapper id="modalLayout" onClick={handleClose} isOpen={isModalOpen}>
         <div className="modal">
           <div className="modal__head">
-            <Button id="closeModalBtn" onClick={handleClose}>
+            <Button id="closeModalBtn" onClick={handleButtonClose} icon={<CloseCircleOutlined />}>
               Close
             </Button>
           </div>
