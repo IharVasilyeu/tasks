@@ -9,7 +9,6 @@ const App = () => (
   <>
     <GlobalStyle />
     <Provider store={store}>
-    
       <ConnectedRouter history={history}>
         <Routes />
       </ConnectedRouter>

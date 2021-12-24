@@ -1,0 +1,1 @@
+export const FORMAT_DATE_YMD_HMS = 'YYYY-MM-DD HH:mm:ss'
