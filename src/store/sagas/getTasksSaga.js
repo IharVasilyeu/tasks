@@ -5,12 +5,15 @@ import {
   actionSetTasksToStore,
   actionStartLoadingTasks,
 } from 'store/reducers/taskReducer/actionTypes'
+import { getAllExistedLabelsSaga } from './getAllExistedLabelsSaga'
 
 export function* getTasks() {
   try {
     yield put(actionStartLoadingTasks())
 
     const resp = yield call(fetchTasks)
+    
+    yield call(getAllExistedLabelsSaga)
 
     yield put(actionSetTasksToStore(resp))
 

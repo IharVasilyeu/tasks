@@ -1,16 +1,19 @@
 import React, { useCallback, useEffect, useMemo } from 'react'
 import { Table } from 'antd'
-import PropTypes from 'prop-types'
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import moment from 'moment'
 import { TableTaskActions } from 'components/molecules'
 import { actionGetTasks } from 'store/reducers/taskReducer/actionTypes'
 import { FORMAT_DATE_YMD_HMS } from 'config/constants'
+import { getLodingTasksFlag, getTasks } from 'store/selectors'
 import { Wrapper } from './TaskTable.styles'
 
-const TaskTable = ({ loading }) => {
+const TaskTable = () => {
   const dispatch = useDispatch()
-  const { tasks } = useSelector(state => state.taskReducer, shallowEqual)
+  const { tasks, isTasksLoading } = useSelector(state => ({
+    tasks: getTasks(state),
+    isTasksLoading: getLodingTasksFlag(state),
+  }), shallowEqual)
 
   const columns = useMemo(
     () => [
@@ -45,7 +48,7 @@ const TaskTable = ({ loading }) => {
   return (
     <Wrapper>
       <Table
-        loading={loading}
+        loading={isTasksLoading}
         dataSource={tasks}
         columns={columns}
         rowKey={handleKey}
@@ -55,8 +58,5 @@ const TaskTable = ({ loading }) => {
   )
 }
 
-TaskTable.propTypes = {
-  loading: PropTypes.bool.isRequired,
-}
 
 export default TaskTable

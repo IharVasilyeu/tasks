@@ -3,3 +3,4 @@ export { default as TableSubtaskActions } from './TableSubtaskActions/TableSubta
 export { default as LabelsSet } from './LabelsSet/LabelsSet'
 export { default as ResultsList } from './ResultsList/ResultsList'
 export { default as SubtaskFilter } from './SubtaskFilter/SubtaskFilter'
+export { default as Toolsbar } from './Toolsbar/Toolsbar'

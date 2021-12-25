@@ -8,7 +8,7 @@ import fetchAllData from 'api/fetchAllData'
 
 export function* searchSaga({ payload }) {
   const searchString = payload
-
+  
   try {
     yield put(actionStartSerarching())
 

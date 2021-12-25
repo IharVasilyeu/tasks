@@ -7,3 +7,4 @@ export const getSearchResults = state => state.taskReducer.searchResult
 export const getSearchLoadingFlag = state => state.taskReducer.isSearching
 export const getLabels = state => state.taskReducer.labels
 export const getFilterLoadingFlag = state => state.taskReducer.isFiltring
+export const getTasks = state => state.taskReducer.tasks
