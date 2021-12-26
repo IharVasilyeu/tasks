@@ -1,3 +1,3 @@
 export default {
-  CREATE: 'CREATE',
+  DELETE_SUBTASK: 'DELETE_SUBTASK',
 }

@@ -1,14 +1,13 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'antd'
-import { useDispatch } from 'react-redux'
-import { actionDeleteSubtask } from 'store/reducers/taskReducer/actionTypes'
+import modalTypes from 'config/modalTypes'
+import { ModalWindow } from 'components/organisms'
 
 const TableSubtaskActions = ({ id }) => {
-  const dispatch = useDispatch()
   const handleDelete = useCallback(() => {
-    dispatch(actionDeleteSubtask(id))
-  }, [id, dispatch])
+    ModalWindow.open(modalTypes.DELETE_SUBTASK, id)
+  }, [id])
 
   return <Button onClick={handleDelete}>Delete Subtasks</Button>
 }

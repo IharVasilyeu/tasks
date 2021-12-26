@@ -1,5 +1,5 @@
 export { default as ModalWindow } from './ModalWindow/ModalWindow'
-export { default as CreateTaskForm } from './CreateForm/CreateForm'
 export { default as TaskTable } from './TaskTable/TaskTable'
 export { default as SubTaskTable } from './SubTaskTable/SubTaskTable'
 export { default as SearchBar } from './SearchBar/SearchBar'
+export { default as TaskPageHeader } from './TaskPageHeader/TaskPageHeader'

@@ -21,8 +21,6 @@ export const Wrapper = styled.div`
     padding: 15px;
     background: #fff;
 
-    /* transform: translateY(-50%); */
-
     #closeModalBtn {
       position: absolute;
       right: 15px;

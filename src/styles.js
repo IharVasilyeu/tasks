@@ -20,6 +20,7 @@ export default createGlobalStyle`
     font-weight: 400;
     font-size: 14px;
     line-height: 1.4;
+    background: #0001;
   }
 
   a {

@@ -1,10 +1,10 @@
 import React from 'react'
 import modalTypes from 'config/modalTypes'
-import { CreateTaskForm } from 'components/organisms'
+import { ConfimationDelete } from 'components/molecules'
 
-export default (type) => {
+export default (type, { additional, handleClose }) => {
   const children = {
-    [modalTypes.CREATE]: <CreateTaskForm />
+    [modalTypes.DELETE_SUBTASK]: <ConfimationDelete id={additional} handleClose={handleClose} />,
   }
 
   return children[type]

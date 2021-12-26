@@ -1,8 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Space } from 'antd'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
 
 const TableTaskActions = ({ data }) => {
   const history = useHistory()

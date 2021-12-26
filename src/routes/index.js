@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { routes } from 'config/routes'
-import SearchPage from 'modules/SearchPage/SearchPage'
+import SearchPage from 'routes/SearchPage/SearchPage'
 import Home from './Home/Home'
 import NotFound from './NotFound/NotFound'
 import SubTasksPage from './SubTasksPage/SubTasksPage'

@@ -1,5 +1,5 @@
 export const routes = {
   root: () => '/',
-  subtasks: () => '/subtasks/:id',
+  subtasks: (id) => `${id ? `/subtasks/${id}`: '/subtasks/:id'}`,
   search: () => '/search',
 }

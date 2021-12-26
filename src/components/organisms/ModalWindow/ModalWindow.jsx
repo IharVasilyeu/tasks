@@ -10,7 +10,9 @@ const ModalWindow = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [childrenType, setChildrenType] = useState('')
 
-  ModalWindow.open = useCallback(modalType => {
+  ModalWindow.open = useCallback((modalType, optionalData) => {
+    ModalWindow.optionalData = optionalData
+
     setChildrenType(modalType)
     setIsModalOpen(true)
   }, [])
@@ -19,6 +21,8 @@ const ModalWindow = () => {
     if (e.target.id === 'modalLayout') {
       setIsModalOpen(false)
       setTimeout(() => setChildrenType(''), 300)
+
+      ModalWindow.optionalData = null
     }
   }, [])
 
@@ -33,6 +37,7 @@ const ModalWindow = () => {
     const portalElement = document.createElement('div')
 
     portalElement.id = 'portal'
+
     document.body.appendChild(portalElement)
     setIsPortalElementAppend(true)
   }, [isPortalElementAppend])
@@ -43,11 +48,14 @@ const ModalWindow = () => {
       <Wrapper id="modalLayout" onClick={handleClose} isOpen={isModalOpen}>
         <div className="modal">
           <div className="modal__head">
-            <Button id="closeModalBtn" onClick={handleButtonClose} icon={<CloseCircleOutlined />}>
-              Close
-            </Button>
+            <Button id="closeModalBtn" onClick={handleButtonClose} icon={<CloseCircleOutlined />} />
           </div>
-          <div className="modal__body">{getChildrenForModalWindow(childrenType)}</div>
+          <div className="modal__body">
+            {getChildrenForModalWindow(childrenType, {
+              additional: ModalWindow.optionalData,
+              handleClose: handleButtonClose,
+            })}
+          </div>
         </div>
       </Wrapper>,
       document.getElementById('portal'),

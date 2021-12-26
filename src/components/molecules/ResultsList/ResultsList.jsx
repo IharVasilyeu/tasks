@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { List, Tag } from 'antd'
+import { Link } from 'react-router-dom'
+import { routes } from 'config/routes'
 import { Wrapper } from './ResultsList.styles'
 
 const ResultsList = ({ data }) => {
@@ -8,7 +10,9 @@ const ResultsList = ({ data }) => {
     item => (
       <List.Item>
         <div>{item.title}</div>
-        {item.taskId ? <Tag color="green">Subtask</Tag> : <Tag color="purple">Task</Tag>}
+        {item.taskId ? <Tag color="green">
+          <Link to={routes.subtasks(item.taskId)}>Subtask</Link>
+        </Tag> : <Tag color="purple">Task</Tag>}
       </List.Item>
     ),
     [],

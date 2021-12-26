@@ -8,7 +8,7 @@ const initialState = {
 }
 
 describe('taskReducer', () => {
-  it('should returns tasks by provided payload', () => {
+  it('should handles the action SET_TASKS_TO_STORE correctly', () => {
     const payload = [
       {
         title: 'kek',

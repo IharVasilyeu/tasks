@@ -1,14 +1,12 @@
 import React from 'react'
-import { TaskTable } from 'components/organisms'
-import { Toolsbar } from 'components/molecules'
+import { TaskPageHeader, TaskTable } from 'components/organisms'
 import { Wrapper } from './Tasks.styles'
 
 const Tasks = () => (
-    <Wrapper>
-      <h1>Processes</h1>
-      <Toolsbar />
-      <TaskTable />
-    </Wrapper>
-  )
+  <Wrapper>
+    <TaskPageHeader />
+    <TaskTable />
+  </Wrapper>
+)
 
 export default Tasks

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   nav {
-    padding: 20px;
+    padding: 20px 0;
 
     a {
       padding: 4px;
