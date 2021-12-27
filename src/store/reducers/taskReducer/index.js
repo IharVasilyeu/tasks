@@ -1,5 +1,4 @@
-import actionTypes from "./actionTypes"
-
+import actionTypes from './actionTypes'
 
 const initialState = {
   tasks: [],
@@ -15,7 +14,7 @@ const initialState = {
 
 export const taskReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case actionTypes.SET_TASKS_TO_STORE: 
+    case actionTypes.SET_TASKS_TO_STORE:
       return {
         ...state,
         tasks: payload,
@@ -23,50 +22,44 @@ export const taskReducer = (state = initialState, { type, payload }) => {
         isTasksLoading: false,
       }
 
-    case actionTypes.START_CREATING_TASK: 
+    case actionTypes.START_CREATING_TASK:
       return {
         ...state,
         isTaskCreating: true,
       }
 
-    case actionTypes.TASK_IS_CREATED: 
+    case actionTypes.TASK_IS_CREATED:
       return {
         ...state,
         isTaskCreating: false,
       }
 
-    case actionTypes.START_LOADING_SUBTASKS: 
+    case actionTypes.START_LOADING_SUBTASKS:
       return {
         ...state,
         isSubtasksloading: true,
       }
 
-    case actionTypes.START_LOADING_TASKS: 
+    case actionTypes.START_LOADING_TASKS:
       return {
         ...state,
         isTasksLoading: true,
       }
 
-    case actionTypes.SET_ERROR: 
-      return {
-        ...state,
-        isSuccess: false,
-      }
-
-    case actionTypes.SET_SUBTASKS: 
+    case actionTypes.SET_SUBTASKS:
       return {
         ...state,
         subtasks: payload,
         isSubtasksloading: false,
       }
 
-    case actionTypes.RESET_SUBTASKS: 
+    case actionTypes.RESET_SUBTASKS:
       return {
         ...state,
         subtasks: [],
       }
 
-    case actionTypes.PUT_SERACH_RESULT_TO_STORE: 
+    case actionTypes.PUT_SERACH_RESULT_TO_STORE:
       return {
         ...state,
         searchResult: payload,
@@ -76,22 +69,22 @@ export const taskReducer = (state = initialState, { type, payload }) => {
     case actionTypes.START_SEARCHING:
       return {
         ...state,
-       isSearching: true,
+        isSearching: true,
       }
 
     case actionTypes.PUT_LABELS_TO_STORE:
       return {
         ...state,
-       labels: payload,
+        labels: payload,
       }
 
     case actionTypes.GET_TASKS_BY_LABELS:
       return {
         ...state,
-       isFiltring: true,
+        isFiltring: true,
       }
 
-    default: 
+    default:
       return state
   }
 }

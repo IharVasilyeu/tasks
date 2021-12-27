@@ -2,10 +2,11 @@ import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Space } from 'antd'
 import { useHistory } from 'react-router-dom'
+import { routes } from 'config/routes'
 
 const TableTaskActions = ({ data }) => {
   const history = useHistory()
-  const handleClick = useCallback(() => history.push(`/subtasks/${data.id}`), [history, data])
+  const handleClick = useCallback(() => history.push(routes.subtasks(data.id)), [history, data])
 
   return (
     <Space>

@@ -22,7 +22,7 @@ const TaskTable = () => {
         dataIndex: 'title',
         key: 'name',
         width: '50%',
-        sorter: (a, b) => a.title < b.title,
+        sorter: (a, b) => a.title < b.title ? 1 : -1,
       },
       {
         title: 'Created At',

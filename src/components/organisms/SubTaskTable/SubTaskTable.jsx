@@ -11,7 +11,7 @@ const SubTaskTable = ({ subtasks, loading }) => {
         title: 'Name',
         dataIndex: 'title',
         key: 'name',
-        sorter: (a, b) => a.title < b.title,
+        sorter: (a, b) => a.title < b.title ? 1 : -1,
       },
       {
         title: 'Labels',

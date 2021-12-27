@@ -10,9 +10,13 @@ const ResultsList = ({ data }) => {
     item => (
       <List.Item>
         <div>{item.title}</div>
-        {item.taskId ? <Tag color="green">
-          <Link to={routes.subtasks(item.taskId)}>Subtask</Link>
-        </Tag> : <Tag color="purple">Task</Tag>}
+        {item.taskId ? (
+          <Tag color="green">
+            <Link to={routes.subtasks(item.taskId)}>Subtask</Link>
+          </Tag>
+        ) : (
+          <Tag color="purple">Task</Tag>
+        )}
       </List.Item>
     ),
     [],
@@ -20,11 +24,7 @@ const ResultsList = ({ data }) => {
 
   return (
     <Wrapper>
-      <List
-        bordered
-        dataSource={data}
-        renderItem={render}
-      />
+      <List bordered dataSource={data} renderItem={render} />
     </Wrapper>
   )
 }
